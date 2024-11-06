@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export async function fetchFilters({ filter, page = 1, limit = 12 }) {
+async function fetchFilters({ filter, page = 1, limit = 12 }) {
   try {
     const params = {};
 
@@ -16,3 +16,5 @@ export async function fetchFilters({ filter, page = 1, limit = 12 }) {
     throw error;
   }
 }
+
+export default fetchFilters;
