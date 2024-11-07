@@ -18,6 +18,7 @@
   "dependencies": {
     "@glidejs/glide": "^3.6.2",
     "axios": "^1.7.7",
-    "glob": "^11.0.0"
+    "glob": "^11.0.0",
+    "izitoast": "^1.4.0"
   }
 }

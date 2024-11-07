@@ -1,4 +1,6 @@
 import axios from 'axios';
+import iziToast  from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
 async function fetchFilters({ filter, page = 1, limit = 12 }) {
   try {
@@ -9,11 +11,15 @@ async function fetchFilters({ filter, page = 1, limit = 12 }) {
     params.limit = limit;
 
     const response = await axios.get('/filters', { params });
-
+    
     return response.data;
   } catch (error) {
-    console.error("Error fetching filters:", error);
-    throw error;
+    iziToast.show({
+      title: 'Error',
+      message: error.message,
+      position: 'center',
+      color: 'red',
+    });
   }
 }
 
