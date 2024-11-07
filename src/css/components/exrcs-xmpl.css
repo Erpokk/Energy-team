@@ -1,0 +1,94 @@
+.exr-list {
+    display: flex;
+    max-width: 900px;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.exr-card {
+    cursor: pointer;
+    position: relative;
+    flex: 0 0 calc(33.33% - 15px);
+    box-sizing: border-box;
+    margin-bottom: 17px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.exr-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.exr-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.exr-card-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+
+.exr-card-title {
+    font-size: 24px;
+    line-height: 1;
+    text-align: center;
+    color: #f4f4f4;
+}
+
+.exr-card-category {
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgba(244, 244, 244, 0.4);
+    margin-top: 2px;
+}
+
+
+@media (max-width: 480px) {
+    .exr-card {
+        flex: 0 0 calc(100% - 15px);
+        margin-bottom: 20px;
+    }
+}
+
+#exr-pagination {
+    cursor: pointer;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.page-button {
+    font-size: 24px;
+    line-height: 1.33333;
+    letter-spacing: 0.04em;
+    color: #d4d4d4;
+}
+
+.page-button.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #242424;
+    border-radius: 18px;
+    padding: 0 12px;
+    width: 32px;
+    height: 32px;
+    line-height: 1.33333;
+    letter-spacing: 0.04em;
+    color: #242424;
+}
