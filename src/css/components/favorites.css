@@ -1,18 +1,80 @@
 .favorite-page {
 font-weight: 400;
 font-size: 44px;
-line-height: 109%;
+line-height: 1.09;
 letter-spacing: -0.02em;
 color: #242424;
+margin-bottom: 40px;
 } 
+
 
 .favorite-text {
 font-weight: 500;
 font-size: 24px;
-line-height: 133%;
+line-height: 1.33;
 color: #f4f4f4;
 }
 
-.favorites-list {
-    display: flex;
+.widjet-page {
+display: flex;
+flex-direction: column;
+align-items: center;
+border-radius: 20px;
+width: 494px;
+height: 230px;
+background: #242424;
+}
+
+.favorites-icon-atribute {
+    fill: #f4f4f4;
+}
+
+.favorites-icon-man {
+    fill: #f4f4f4;
+}
+
+.favorite-quote {
+font-weight: 400;
+font-size: 14px;
+line-height: 1.29;
+text-align: center;
+color: rgba(244, 244, 244, 0.6);
+}
+
+.favorite-author {
+font-weight: 400;
+font-size: 16px;
+line-height: 1.50;
+color: #f4f4f4;
+}
+
+
+.my-image {
+border-radius: 20px;
+width: 239px;
+height: 141px;
+background-size: cover; 
+background-position: center; 
+background-repeat: no-repeat; 
+}
+
+.text.min {
+font-weight: 500;
+font-size: 24px;
+line-height: 1.33;
+color: #242424;
+}
+
+.text-gray {
+font-weight: 400;
+font-size: 14px;
+line-height: 1.29;
+color: rgba(36, 36, 36, 0.6);
+}
+
+.exsersise-time {
+border-radius: 20px;
+width: 239px;
+height: 141px;
+background: #fff;
 }
