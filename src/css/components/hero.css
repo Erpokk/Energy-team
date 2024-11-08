@@ -1,3 +1,208 @@
-h1 {
-    
+/* Hero styles */
+/* Mobile first */
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.hero-title {
+    text-align: left;
+    font-weight: 400;
+    font-size: 38px;
+    line-height: 1.16;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    color: #242424;
+    margin-top: 132px;
+}
+
+.accent {
+    font-style: italic;
+}
+
+.hero-title::before {
+    content: "";
+    display: inline-block;
+    background-image: url('../../images/hero/sun.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 38px;
+    height: 38px;
+    margin-right: 15px;
+}
+
+.hero-text {
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.hero-background-img {
+    background-image: url('../../images/hero/girls-outdoors-working-out-mob@1x.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    width: 335px;
+    height: 460px;
+    margin-bottom: 20px;
+}
+
+/* Retina display mobile @ 2x */
+@media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero-background-img {
+        background-image: url('../../images/hero/girls-outdoors-working-out-mob@2x.jpg');
+    }
+}
+
+.hero-tags {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.hero-tag {
+    padding: 4px 12px;
+    border: 1px solid #242424;
+    border-radius: 30px;
+}
+
+.hero-desktop-container {
+    display: none;
+}
+
+.hero-mob-container {
+    display: block;
+    margin-bottom: 40px;
+}
+
+
+/* Tablet */
+
+@media only screen and (min-width: 768px) {
+    .hero-title {
+        font-size: 74px;
+        line-height: 1;
+        margin-top: 176px;
+        max-width: 639px;
+    }
+
+    .hero-title::before {
+        width: 59px;
+        height: 59px;
+        margin-right: 10px;
+    }
+
+    .hero-section .hero-text {
+        font-size: 18px;
+        line-height: 1.33;
+        margin-bottom: 32px;
+        max-width: 528px;
+    }
+
+    .hero-background-img {
+        background-image: url('../../images/hero/girls-outdoors-working-out-tablet@1x.jpg');
+        border-radius: 60px;
+        width: 704px;
+        height: 550px;
+        margin-bottom: 16px;
+    }
+
+    .hero-tags {
+        justify-content: flex-end;
+        margin-bottom: 64px;
+    }
+
+    .hero-tag {
+        padding: 4px 16px;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+}
+
+/* Retina display tablet @ 2x*/
+@media only screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2),
+screen and (min-width: 768px) and (min-resolution: 192dpi) {
+    .hero-background-img {
+        background-image: url('../../images/hero/girls-outdoors-working-out-tablet@2x.jpg');
+    }
+}
+
+/* Desktop */
+
+@media (min-width: 1440px) {
+
+    .hero-background-img {
+        background-image: url('../../images/hero/girls-outdoors-working-out-desk@1x.jpg');
+        width: 1376px;
+        height: 350px;
+        margin-bottom: 64px;
+    }
+
+    .hero-tags-desktop {
+        display: flex;
+        gap: 8px;
+        justify-content: right;
+        flex-wrap: wrap;
+        margin-bottom: 32px;
+    }
+
+    .hero-tags-desktop .hero-tag-desktop {
+        padding: 4px 16px;
+        border: 1px solid #242424;
+        border-radius: 30px;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .hero-text-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .hero-text {
+        max-width: 528px;
+    }
+
+    .hero-desktop-container {
+        display: flex;
+        flex-direction: column; 
+        align-items: flex-end;  
+        text-align: right; 
+        width: 197px; 
+    }
+
+    .hero-mob-container {
+        display: none;
+    }
+
+    .hero-bgi-desktop {
+        background-image: url('../../images/hero/girls-doing-fitness-together-outdoors@1x.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 30px;
+        width: 168px;
+        height: 100px;
+        margin-top: 188px;
+        margin-bottom: 32px;
+    }
+}
+
+/* Retina display desktop @ 2x*/
+@media screen and (min-width: 1440px) and (min-resolution: 192dpi) {
+    .hero-background-img {
+        background-image: url('../../images/hero/girls-outdoors-working-out-desk@2x.jpg');
+    }
+
+    .hero-bgi-desktop {
+        background-image: url('../../images/hero/girls-doing-fitness-together-outdoors@2x.jpg');
+    }
 }
