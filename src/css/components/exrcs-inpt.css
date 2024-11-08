@@ -1,5 +1,8 @@
-.exercises{
-    /* margin-top: 150px; todo remove */
+.hidden {
+    display: none;
+}
+
+.exercises {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -7,10 +10,33 @@
     line-height: 1.09;
     letter-spacing: -0.02em;
     color: #242424;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 28px;
+    }
 }
+
+.selected-category {
+    font-size: 24px;
+    line-height: 1.33;
+    letter-spacing: -0.02em;
+    color: rgba(36, 36, 36, 0.5);
+
+    @media (max-width: 768px) {
+        font-size: 20px;
+        line-height: 1;
+    }
+}
+
 .exr-category {
     display: flex;
     justify-content: flex-end;
+
+    @media (max-width: 768px) {
+        justify-content: left;
+    }
 }
 
 .exr-category-item {
@@ -23,6 +49,11 @@
     font-size: 16px;
     line-height: 1.5;
     color: rgba(36, 36, 36, 0.6);
+
+    @media (max-width: 768px) {
+        font-size: 14px;
+        margin: 20px 20px 0 0;
+    }
 }
 
 .exr-category-item::after {

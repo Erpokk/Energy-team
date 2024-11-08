@@ -1,8 +1,8 @@
-import { processFilteredCategory } from './processFilteredCategory.js';
 import { paginationContainer } from './constants.js';
+import { configureScroll } from './helpers.js';
 
 
-export function pagination(totalPages, filter) {
+export function pagination(totalPages, filter, processFiltered) {
   paginationContainer.innerHTML = '';
 
   for (let i = 1; i <= totalPages; i++) {
@@ -14,7 +14,8 @@ export function pagination(totalPages, filter) {
       document.querySelectorAll('.page-button').forEach(button => button.classList.remove('active'));
       pageButton.classList.add('active');
       filter.page = i;
-      await processFilteredCategory(filter);
+      await processFiltered(filter);
+      configureScroll();
     });
 
     paginationContainer.appendChild(pageButton);
