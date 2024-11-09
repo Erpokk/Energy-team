@@ -22,7 +22,7 @@ export function createCategoryCards(cards) {
 export function createExerciseCards(cards) {
   return cards
     .map(
-      ({name, bodyPart, target, rating, burnedCalories, time }) => `
+      ({ _id, name, bodyPart, target, rating, burnedCalories, time }) => `
           <li class="exr-card">
       <div class="workout-title">
         <div class="workout-title-left">
@@ -34,7 +34,7 @@ export function createExerciseCards(cards) {
           </p>
         </div>
         <div class="workout-title-right">
-          <button class="workout-start">Start
+          <button class="workout-start" data-modal-open="${_id}">Start
           <svg class="workout-arw" width="16" height="16">
             <use href="${icons}#arw-top"></use>
           </svg>
@@ -50,7 +50,7 @@ export function createExerciseCards(cards) {
         <p class="workout-details-disc">${name}</p>
       </div>
        <div class="workout-stats">
-        <p class="workout-stats-cal"><span class="workout-stats-title">Burned calories: </span>${burnedCalories+' / '+time}</p>
+        <p class="workout-stats-cal"><span class="workout-stats-title">Burned calories: </span>${burnedCalories + ' / ' + time}</p>
         <p class="workout-stats-part"><span class="workout-stats-title">Body part: </span>${capitalizeFirstLetter(bodyPart)}</p>
         <p class="workout-stats-target"><span class="workout-stats-title">Target: </span>${capitalizeFirstLetter(target)}</p>
       </div>

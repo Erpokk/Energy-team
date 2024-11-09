@@ -6,4 +6,7 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    --black: #242424;
+    --gray: #f4f4f4;
+    --orange: #eea10c;
   }
