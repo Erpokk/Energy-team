@@ -4,7 +4,7 @@ import {
   maxLetterInWorkoutDetailsDisc,
   maxLetterInWorkoutStatsCal,
 } from './constants.js';
-import icons from '../images/icons.svg';
+import icons from '../../images/icons.svg';
 
 export function createCategoryCards(cards) {
   return cards
