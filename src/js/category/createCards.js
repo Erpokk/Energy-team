@@ -54,7 +54,7 @@ export function createExerciseCards(cards) {
         <p class="workout-details-disc">${truncateText(name, maxLetterInWorkoutDetailsDisc)}</p>
       </div>
       <div class="workout-stats">
-        <p><span class="workout-stats-title">Burned calories: </span>${truncateText(burnedCalories+' /'+time, maxLetterInWorkoutStatsCal)}</p>
+        <p><span class="workout-stats-title">Burned calories: </span>${truncateText(burnedCalories+'/'+time, maxLetterInWorkoutStatsCal)}</p>
         <p><span class="workout-stats-title">Body part: </span>${truncateText(bodyPart, maxLetterInWorkoutStatsCal)}</p>
         <p><span class="workout-stats-title">Target: </span>${truncateText(target, maxLetterInnWorkoutStatsTarget)}</p>
       </div>
