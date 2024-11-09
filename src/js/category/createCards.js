@@ -41,7 +41,7 @@ export function createExerciseCards(cards) {
         <div class="workout-title-right">
           <button class="workout-start">Start
           <svg class="workout-arw" width="16" height="16">
-            <use href=".${icons}#arw-top"></use>
+            <use href="${icons}#arw-top"></use>
           </svg>
           </button>
         </div>
