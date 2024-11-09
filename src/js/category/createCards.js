@@ -41,7 +41,7 @@ export function createExerciseCards(cards) {
         <div class="workout-title-right">
           <button class="workout-start">Start
           <svg class="workout-arw" width="16" height="16">
-            <use href="./images/icons.svg#arw-top"></use>
+            <use href=".${icons}#arw-top"></use>
           </svg>
           </button>
         </div>
@@ -49,7 +49,7 @@ export function createExerciseCards(cards) {
       <div class="workout-details">
         <p class="workout-run-man-wrapper">
         <svg class="workout-run-man" width="16" height="16">
-          <use href="./images/icons.svg#runn-man"></use>
+          <use href="${icons}#runn-man"></use>
         </svg>
         </p>
         <p class="workout-details-disc">${truncateText(name, maxLetterInWorkoutDetailsDisc)}</p>
