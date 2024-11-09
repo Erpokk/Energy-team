@@ -7,7 +7,7 @@
 
     @media (max-width: 768px) {
         gap: 20px;
-        min-width: 335px;
+        max-width: 335px;
     }
 }
 
@@ -105,7 +105,7 @@
     display: flex;
     flex-direction: column;
     padding: 16px;
-    min-width: 344px;
+    max-width: 344px;
     border-radius: 15px;
     background: #fff;
     box-sizing: border-box;
@@ -115,7 +115,7 @@
 
     @media (max-width: 768px) {
         flex: 0 0 calc(100% - 16px);
-        min-width: 335px;
+        max-width: 335px;
         gap: 16px;
         margin-bottom: 0;
     }
@@ -159,6 +159,7 @@
 .workout-rating {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 2px;
 }
 
@@ -189,6 +190,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .workout-run-man {
@@ -197,6 +199,9 @@
 
 .workout-details-disc {
     font-size: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     @media (max-width: 768px) {
         font-size: 20px;
@@ -205,11 +210,38 @@
 }
 
 .workout-stats > p {
-    font-weight: 400;
     font-size: 12px;
     line-height: 1.5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
+
 
 .workout-stats-title {
     color: rgba(36, 36, 36, 0.4);
+}
+
+.workout-stats-cal{
+    max-width: 133px;
+
+    @media (max-width: 768px) {
+        max-width: 131px;
+    }
+}
+
+.workout-stats-part{
+    max-width: 93px;
+
+    @media (max-width: 768px) {
+        max-width: 91px;
+    }
+}
+
+.workout-stats-target{
+    max-width: 66px;
+
+    @media (max-width: 768px) {
+        max-width: 61px;
+    }
 }

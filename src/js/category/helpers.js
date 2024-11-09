@@ -24,13 +24,6 @@ export function capitalizeFirstLetter(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
- export function truncateText(text, maxLength) {
-   if (text.length > maxLength) {
-     return text.slice(0, maxLength) + '...';
-   }
-   return text;
- }
-
  export function formatToSingleDecimal(number) {
-   return parseFloat(number.toFixed(1));
+   return number.toFixed(1);
  }

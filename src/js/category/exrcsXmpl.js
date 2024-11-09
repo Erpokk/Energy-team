@@ -3,12 +3,12 @@ import { getLimitCategoryByPage, getLimitExerciseByPage } from './limitPerPage.j
 import {
   categoryList,
   exrListEl,
-  firstCategory,
+  firstCategory, paginationContainer,
   selectedCategory,
   selectedCategorySlash,
 } from './constants.js';
 import { processFetchCategory, processFetchExercises } from './processFetch.js';
-import { getCategoryKey } from './helpers.js';
+import { capitalizeFirstLetter, getCategoryKey } from './helpers.js';
 
 categoryList.addEventListener('click', handleFilter);
 if (exrListEl) {
@@ -40,11 +40,14 @@ async function handleFilter(event) {
       limit: getLimitCategoryByPage(),
     };
     const data = await processFetchCategory(filter);
-    pagination(data.totalPages, filter, processFetchCategory);
+    if (data) {
+      pagination(data.totalPages, filter, processFetchCategory);
+    }
   }
 }
 
 async function handleCategoryElement(event) {
+  paginationContainer.innerHTML = '';
   const clickedLi = event.target.closest('.exr-category-card');
 
   if (clickedLi) {
@@ -59,9 +62,11 @@ async function handleCategoryElement(event) {
       };
 
     const data = await processFetchExercises(filter);
-    selectedCategorySlash.classList.remove('hidden');
-    selectedCategory.textContent = category;
-    pagination(data.totalPages, filter, processFetchExercises);
+    if (data) {
+      selectedCategorySlash.classList.remove('hidden');
+      selectedCategory.textContent = capitalizeFirstLetter(categoryName);
+      pagination(data.totalPages, filter, processFetchExercises);
+    }
   }
 }
 
