@@ -33,14 +33,14 @@ export function createExerciseCards(cards) {
           <p class="workout-title-name">WORKOUT</p>
           <p class="workout-rating">${formatToSingleDecimal(rating)}
             <svg class="workout-star" width="18" height="18">
-              <use href="./images/icons.svg#rating-star"></use>
+              <use href="/src/images/icons.svg#rating-star"></use>
             </svg>
           </p>
         </div>
         <div class="workout-title-right">
           <button class="workout-start">Start
           <svg class="workout-arw" width="16" height="16">
-            <use href="./images/icons.svg#arw-top"></use>
+            <use href=".src/images/icons.svg#arw-top"></use>
           </svg>
           </button>
         </div>
