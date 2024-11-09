@@ -1,9 +1,4 @@
-import { capitalizeFirstLetter, formatToSingleDecimal, truncateText } from './helpers.js';
-import {
-  maxLetterInnWorkoutStatsTarget,
-  maxLetterInWorkoutDetailsDisc,
-  maxLetterInWorkoutStatsCal,
-} from './constants.js';
+import { capitalizeFirstLetter, formatToSingleDecimal } from './helpers.js';
 import icons from '../../images/icons.svg';
 
 export function createCategoryCards(cards) {
@@ -52,12 +47,12 @@ export function createExerciseCards(cards) {
           <use href="${icons}#runn-man"></use>
         </svg>
         </p>
-        <p class="workout-details-disc">${truncateText(name, maxLetterInWorkoutDetailsDisc)}</p>
+        <p class="workout-details-disc">${name}</p>
       </div>
-      <div class="workout-stats">
-        <p><span class="workout-stats-title">Burned calories: </span>${truncateText(burnedCalories+'/'+time, maxLetterInWorkoutStatsCal)}</p>
-        <p><span class="workout-stats-title">Body part: </span>${truncateText(bodyPart, maxLetterInWorkoutStatsCal)}</p>
-        <p><span class="workout-stats-title">Target: </span>${truncateText(target, maxLetterInnWorkoutStatsTarget)}</p>
+       <div class="workout-stats">
+        <p class="workout-stats-cal"><span class="workout-stats-title">Burned calories: </span>${burnedCalories+' / '+time}</p>
+        <p class="workout-stats-part"><span class="workout-stats-title">Body part: </span>${capitalizeFirstLetter(bodyPart)}</p>
+        <p class="workout-stats-target"><span class="workout-stats-title">Target: </span>${capitalizeFirstLetter(target)}</p>
       </div>
     </li>`,
     )

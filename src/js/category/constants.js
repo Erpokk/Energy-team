@@ -13,8 +13,4 @@ export const CategoryEnum = {
   equipment: "Equipment"
 };
 
-export const maxLetterInWorkoutDetailsDisc = 22;
-export const maxLetterInWorkoutStatsCal = 5;
-export const maxLetterInnWorkoutStatsTarget = 3;
-
 
