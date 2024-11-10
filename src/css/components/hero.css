@@ -52,12 +52,21 @@
     flex-wrap: nowrap;
     gap: 8px;
     margin-top: 20px;
+
+    @media screen and (max-width:374px) {
+        flex-wrap: wrap;
+    }
 }
 
 .hero-tag {
     padding: 4px 12px;
     border: 1px solid #242424;
     border-radius: 30px;
+
+    @media screen and (max-width:374px) {
+        width: 45%;
+        text-align: center;
+    }   
 }
 
 
@@ -151,7 +160,7 @@
 
     .hero-image-mobile, 
     .hero-image-tablet, 
-    .hero-container-mobile {
+    .hero-tags {
         display: none;
       }
 }    
