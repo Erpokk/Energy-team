@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin-bottom: 80px;
 }
 
 .quote-card {
@@ -132,42 +133,24 @@
     line-height: 1.5;
 }
 
-@media (min-width: 768px) {
+@media only screen and (min-width: 768px) {
     .exrcs-motivation-container {
-        display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        width: 800px;     
+        gap: 32px;
+        max-width: 800px;
+        margin: 0 auto;
+        justify-content: center;
     }
 
     .quote-card,
-    .exercise-goal-card {
-        width: 400;
-    }
-
-    .motivation-image {
-        width: auto;
-    }
-}
-
-/* Desktop layout (1024px and above) */
-@media (min-width: 1440px) {
-    .exrcs-motivation-container {
-        /* display: flex;
-        justify-content: space-around;
-        align-items: center; */
-    }
-
-    .quote-card,
-    .exercise-goal-card {
-        /* width: 30%; */
-    }
-
     .image-wrapper {
-        /* width: 30%; */
+        width: calc((100% - 16px) * 2);   
+        /* padding: 32px 16px; */
     }
 
-    .motivation-image {
-        /* height: 200px; */
+    .exercise-goal-card {
+        width: calc(100% - 16px);        
     }
 }
+
