@@ -5,7 +5,7 @@
     flex-wrap: wrap;
 
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         gap: 20px;
         max-width: 335px;
     }
@@ -20,7 +20,7 @@
     border-radius: 12px;
     overflow: hidden;
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         flex: 0 0 calc(100% - 15px);
         margin-bottom: 20px;
     }
@@ -73,10 +73,12 @@
     flex-wrap: wrap;
     gap: 8px;
     justify-content: center;
-    margin: 16px 0;
+    margin-top: 16px;
+    padding-bottom: 132px;
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         margin: 20px 0;
+        padding-bottom: 80px;
     }
 }
 
@@ -113,7 +115,7 @@
     flex: 0 0 calc(50% - 16px);
     gap: 8px;
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         flex: 0 0 calc(100% - 16px);
         max-width: 335px;
         gap: 16px;
@@ -129,7 +131,7 @@
     display: flex;
     gap: 16px;
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         gap: 10px;
     }
 }
@@ -203,7 +205,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         font-size: 20px;
         line-height: 1.333;
     }
@@ -225,7 +227,7 @@
 .workout-stats-cal{
     max-width: 133px;
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         max-width: 131px;
     }
 }
@@ -233,7 +235,7 @@
 .workout-stats-part{
     max-width: 93px;
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         max-width: 91px;
     }
 }
@@ -241,7 +243,7 @@
 .workout-stats-target{
     max-width: 66px;
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         max-width: 61px;
     }
 }
