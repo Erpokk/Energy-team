@@ -3,6 +3,7 @@ import iziToast  from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 async function createSubscription(email) {
+  console.log(email)
   try {
     const response = await axios.post('/subscription', { email });
     if(response) {
