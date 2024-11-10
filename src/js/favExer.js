@@ -19,7 +19,7 @@ export function createExerciseCardsFromLocalStorage() {
     return;
   }
   // Проверка, сколько карточек получено из localStorage
-  console.log("Rendering cards:", cards);
+ 
 
   const cardsHtml = cards
     .map(
