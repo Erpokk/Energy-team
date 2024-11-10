@@ -10,7 +10,7 @@
 }
 
 .header.shadow {
-  box-shadow: -20px -20px 41px var(--cl-shadow), 20px 3px 41px var(--cl-white);
+  box-shadow: -20px -20px 41px #bebebe, 20px 3px 41px #ffffff;
 }
 
 .header-wrapper {
@@ -35,6 +35,13 @@
   color: #f4f4f4;
   font-size: 16px;
   line-height: 1.5;
+  transition: all 0.3s;
+}
+
+.header-pages-item:hover,
+.header-pages-item:focus {
+  transform: scale(1.05);
+  outline: transparent;
 }
 
 .header-menu-btn {
@@ -127,7 +134,7 @@
 
 @media screen and (min-width: 768px) {
   .header-menu {
-    flex-basis: 65%;
+    flex-basis: 67%;
     flex-direction: row;
     position: static;
     visibility: visible;
@@ -139,7 +146,7 @@
   .header-pages-list {
     background-color: #242424;
     border-radius: 30px;
-    padding: 8px 34px;
+    padding: 8px 46px;
   }
   .header-menu-btn {
     display: none;
@@ -166,7 +173,7 @@
     flex-basis: 60%;
   }
   .header-pages-list {
-    padding: 8px 50px;
+    padding: 8px 62px;
   }
 }
 
@@ -187,4 +194,14 @@
 .header.open .backdrop {
   visibility: visible;
   opacity: 1;
+}
+
+.logo {
+  transition: all 0.3s;
+}
+
+.logo:hover,
+.logo:focus {
+  transform: scale(1.05);
+  outline: transparent;
 }
