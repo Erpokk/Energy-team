@@ -1,8 +1,8 @@
 import fetchFilters from '../utils/fetchFilters.js';
 import { createCategoryCards, createExerciseCards } from './createCards.js';
-import { exrListEl } from './constants.js';
+import { exrListEl, quoteText, quoteAuthor } from './constants.js';
 import fetchExercises from '../utils/fetchExercises.js';
-
+import fetchQuote from '../utils/fetchQuote.js';
 
 export async function processFetchCategory(filter) {
   const data = await fetchFilters(filter);
@@ -26,6 +26,15 @@ export async function processFetchExercises(filter) {
   exrListEl.innerHTML = '';
   const cardMarkup = createExerciseCards(data.results);
   exrListEl.insertAdjacentHTML('beforeend', cardMarkup);
+
+  return data;
+}
+
+export async function processFetchQuote() {
+  const data = await fetchQuote();
+  
+  quoteText.textContent = data?.quote ?? 'No quote available';
+  quoteAuthor.textContent = data?.author ?? 'Unknown';
 
   return data;
 }
