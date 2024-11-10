@@ -6,6 +6,8 @@ export const exrCard = document.querySelector('.exr-category-card');
 export const selectedCategory = document.querySelector('.selected-category');
 export const selectedCategorySlash = document.querySelector('.selected-category-slash');
 export const paginationContainer = document.getElementById('exr-pagination');
+export const quoteText = document.getElementById('quote-text');
+export const quoteAuthor = document.getElementById('quote-author');
 
 export const CategoryEnum = {
   bodypart: "Body parts",
