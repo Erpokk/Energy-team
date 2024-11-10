@@ -298,7 +298,7 @@ function removeFavoriteExercise() {
 }
 
 function handleOpenFeedBackModal() {
-  console.log(currentExercise._id);
+  // console.log(currentExercise._id);
 
   // TODO
   // openFeedbackModal({ exerciseId: currentExercise._id });

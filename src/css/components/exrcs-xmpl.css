@@ -24,6 +24,8 @@
         flex: 0 0 calc(100% - 15px);
         margin-bottom: 20px;
     }
+
+   
 }
 
 .exr-category-card::before {
@@ -247,3 +249,4 @@
         max-width: 61px;
     }
 }
+
