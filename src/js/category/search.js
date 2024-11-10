@@ -1,5 +1,6 @@
 import { processFetchExercises } from './processFetch.js';
 import { createExerciseCards } from './createCards.js';
+import { filterStore } from './store-filter.js';
 
 const searchInput = document.getElementById('searchInput');
 const searchButton = document.querySelector('.search-btn');
@@ -9,39 +10,37 @@ const selectedCategoryEl = document.querySelector('.selected-category');
 let currentPage = 1;
 let itemsPerPage = 10;
 
-function getSelectedCategory() {
-  return selectedCategoryEl ? selectedCategoryEl.textContent : '';
-}
+function getFilterParams() {
+  const keyword = searchInput.value.trim();
+  const category = selectedCategoryEl ? selectedCategoryEl.textContent : '';
 
-async function searchExercises() {
-  const searchKeyword = searchInput.value.trim();
-  const category = getSelectedCategory();
-  
-  const filter = {
-    keyword: searchKeyword,
-    category: category,
+  return {
+    keyword,
+    category,
     page: currentPage,
     limit: itemsPerPage,
   };
-  
+}
+
+async function searchExercises() {
+  const filter = filterStore.filter;
+  if (!filter.keyword && !filter.category) {
+    filter.keyword = searchInput.value.trim();
+  }
+
   const data = await processFetchExercises(filter);
-  
+
   if (data && data.results) {
-    // Clear the current exercises and pagination
     exrListEl.innerHTML = '';
     exrPaginationEl.innerHTML = '';
-    
-    // Render exercise cards
     const exerciseMarkup = createExerciseCards(data.results);
     exrListEl.insertAdjacentHTML('beforeend', exerciseMarkup);
-    
-    // Render pagination
     renderPagination(data.totalPages);
   }
 }
 
-// Function to render pagination buttons
 function renderPagination(totalPages) {
+  exrPaginationEl.innerHTML = '';
   for (let i = 1; i <= totalPages; i++) {
     const pageButton = document.createElement('button');
     pageButton.textContent = i;
@@ -50,25 +49,39 @@ function renderPagination(totalPages) {
     
     pageButton.addEventListener('click', () => {
       currentPage = i;
-      searchExercises(); // Fetch exercises for the selected page
+      filterStore.updateFilter({ page: currentPage });
+      searchExercises();
     });
-    
+
     exrPaginationEl.appendChild(pageButton);
   }
 }
 
-// Event listener for search button click
 searchButton.addEventListener('click', (event) => {
   event.preventDefault();
-  currentPage = 1; // Reset to first page on new search
+  currentPage = 1;
+  const filter = getFilterParams();
+  filterStore.updateFilter(filter);
   searchExercises();
 });
 
-// Event listener for search input "Enter" key
 searchInput.addEventListener('keypress', (event) => {
   if (event.key === 'Enter') {
     event.preventDefault();
-    currentPage = 1; // Reset to first page on new search
+    currentPage = 1;
+    const filter = getFilterParams();
+    filterStore.updateFilter(filter);
     searchExercises();
   }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (!searchInput.value && !selectedCategoryEl.textContent) {
+    const cachedFilter = filterStore.filter;
+    if (cachedFilter) {
+      searchInput.value = cachedFilter.keyword || '';
+      selectedCategoryEl.textContent = cachedFilter.category || '';
+    }
+  }
+  searchExercises();
 });
