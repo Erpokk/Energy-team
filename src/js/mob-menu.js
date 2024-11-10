@@ -44,9 +44,8 @@ window.addEventListener('resize', () => {
 
 document.addEventListener('DOMContentLoaded', function () {
   function setActiveMenu() {
-    if (window.innerWidth > 768) {
+    if (window.innerWidth >= 768) {
       const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-      console.log(currentPath);
 
       document.querySelectorAll('.header-pages-item').forEach(item => {
         const link = item.querySelector('a');
