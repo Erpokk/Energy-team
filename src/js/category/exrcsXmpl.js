@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded', () => {
 async function handleFilter(event) {
   if (event.target.classList.contains('exr-category-item')) {
     selectedCategory.textContent = '';
-    selectedCategorySlash.classList.remove('hidden');
+    selectedCategorySlash.classList.add('hidden');
     searchForm.classList.add('visually-hidden');
     document.querySelectorAll('.exr-category-item').forEach(category => category.classList.remove('active'));
     event.target.classList.add('active');
