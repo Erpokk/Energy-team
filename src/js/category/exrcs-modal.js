@@ -110,13 +110,14 @@ function renderExerciseCard({
   burnedCalories,
   popularity,
 }) {
+  const friendlyName = name.charAt(0).toUpperCase() + name.slice(1);
   return `
       <div class="exercise-modal__thumb">
-        <img class="exercise-modal__img" src="${gifUrl}" alt="${name}" />
+        <img class="exercise-modal__img" src="${gifUrl}" alt="${friendlyName}" />
       </div>
 
       <div>
-        <h3 class="exercise-modal__title">${name}</h3>
+        <h3 class="exercise-modal__title">${friendlyName}</h3>
 
         ${renderExerciseRating({ rating })}
 
@@ -138,9 +139,11 @@ function renderExerciseCard({
 }
 
 function renderExerciseRating({ rating }) {
+  const formattedRating = Number.isInteger(rating) ? `${rating}.0` : rating.toFixed(2);
+
   return `
         <div class="exercise-modal__rating">
-          <p class="exercise-modal__rating-value">${rating}</p>
+          <p class="exercise-modal__rating-value">${formattedRating}</p>
 
           ${[1, 2, 3, 4, 5]
       .map(value =>
@@ -150,6 +153,7 @@ function renderExerciseRating({ rating }) {
         </div>
     `;
 }
+
 
 function renderRatingStar({ isActive }) {
   return `
@@ -174,12 +178,13 @@ function renderExerciseInfo(props) {
           ${exerciseInfoLabels
       .map(([infoKey, infoLabel]) => {
         const infoValue = props[infoKey];
+        const friendlyValue = isNaN(infoValue) ? infoValue.charAt(0).toUpperCase() + infoValue.slice(1) : infoValue;
 
-        return infoValue
+        return friendlyValue
           ? `
                 <li>
                     <h4 class="exercise-modal__info-title">${infoLabel}</h4>
-                    <p class="exercise-modal__info-desc">${infoValue}</p>
+                    <p class="exercise-modal__info-desc">${friendlyValue}</p>
                 </li>
             `
           : ``;
@@ -293,7 +298,7 @@ function removeFavoriteExercise() {
 }
 
 function handleOpenFeedBackModal() {
-  console.log(currentExercise._id);
+  // console.log(currentExercise._id);
 
   // TODO
   // openFeedbackModal({ exerciseId: currentExercise._id });

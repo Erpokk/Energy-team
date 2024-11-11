@@ -16,77 +16,65 @@
   </head>
   <body>
     <load src="partials/header.html" />
+    
     <main>
-        <section class="section fa">
+        <section class="fav-sec">
             <div class="container">
-                <h1 class="favorite-page">Favorites</h1>
-                <div class="wraper-card">
-                    <div>
-                        <div class="widjet-page">
-                        <p class="favorite-wraper">
-                                <svg class="favorites-icon-man" width="24" height="24">
+                <h1>Favorites</h1>
+                <div class="fav-wrapper">
+                    <div class="wrapper-first-sec">
+                        <div class="quote-card fav-quote-card">
+                            <div class="icon-left">
+                                <svg class="quote-icon" width="20" height="20">
                                     <use href="./images/icons.svg#runn-man"></use>
                                 </svg>
-                        </p>
-                                <h2 class="favorite-text">Quote of the day</h2>
-                                <svg class="favorites-icon-atribute" width="24" height="24">
-                                    <use href="./images/icons.svg#quote"></use>
+                            </div>
+                            <div class="quote-content">
+                                <p class="quote-text fav-quote-text">
+                                    Quote of the day
+                                    <span class="icon-right fav-icon-right">
+                                    <svg class="quote-icon" width="20" height="20">
+                                        <use href="./images/icons.svg#quote"></use>
+                                    </svg>
+                                    </span>
+                                </p>
+                                <p class="quote">
+                                    A lot of times I find that people who are blessed with the most talent
+                                    don't ever develop that attitude, and the ones who aren't blessed in
+                                    that way are the most competitive and have the biggest heart.
+                                </p>
+                                <p class="quote-author">Tom Brady</p>
+                            </div>
+                        </div>   
+                        <div class="exercise-goal-card fav-goal-card">
+                            <div class="goal-icon">
+                                <svg class="icon-target" width="20" height="20">
+                                    <use href="./images/icons.svg#gauntlets"></use>
                                 </svg>
-                                <p class="favorite-quote">A lot of times I find that people who are blessed with the most talent don't ever develop that
-                                    attitude, and the ones who aren't blessed in that way are the most competitive and have the
-                                    biggest heart.</p>
-                                <p class="favorite-author">Tom Brady</p>
-                        </div>
-                    </div>
-                    <div class="exsersise-time">
-                        <svg class="icon-gauntlets" width="16" height="16">
-                            <use href="./images/icons.svg#gauntlets"></use>
-                        </svg>
-                        <p class="text-min">110 min</p>
-                        <p class="text-grey">Daily norm of sports</p>
+                            </div>
+                            <div class="goal-content">
+                                <p class="goal-text">110 min</p>
+                                <p class="goal-subtext">Daily norm of sports</p>
+                            </div>
+                        </div>  
+                        <img
+                        src="./images/favorites/smiling-girls.jpg"
+                        srcset="./images/favorites/smiling-girls@2x.jpg"
+                        alt="Group exercising"
+                        class="fav-img"
+                        />       
+                          
+                    </div>   
+                    <ul class="wrapper-secnd" id="wrapper-secnd">
 
-                    </div>
-                        <img src="images/favorites/smiling-girls.jpg" alt="2-girls" class="my-image">
-                     
+                    </ul>
                 </div>
-                <li class="exr-card">
-                <div class="workout-title">
-                    <div class="workout-title-left">
-                        <p class="workout-title-name">WORKOUT</p>
-                        <p class="workout-rating">
-                            <svg class="workout-star" width="18" height="18">
-                                <use href="./images/icons.svg#rating-star"></use>
-                            </svg>
-                        </p>
-                    </div>
-                    <div class="workout-title-right">
-                        <button class="workout-start">Start
-                            <svg class="workout-arw" width="16" height="16">
-                                <use href="images/icons.svg#arw-top"></use>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <div class="workout-details">
-                    <p class="workout-run-man-wrapper">
-                        <svg class="workout-run-man" width="16" height="16">
-                            <use href="./images/icons.svg#runn-man"></use>
-                        </svg>
-                    </p>
-                    <p class="workout-details-disc">Air bike</p>
-                </div>
-                <div class="workout-stats">
-                    <p class="workout-stats-cal"><span class="workout-stats-title">Burned calories: </span>312 / 3 min</p>
-                    <p class="workout-stats-part"><span class="workout-stats-title">Body part:
-                        </span>Waist</p>
-                    <p class="workout-stats-target"><span class="workout-stats-title">Target:
-                        </span>Abs</p>
-                </div>
-                </li>
             </div>
-        
         </section>
+        <!-- <load src="partials/footer.html" /> -->
+        <load src="partials/exrcs-modal.html" />
     </main>
+    <script defer type="module" src="./js/favExer.js"></script>
     <script defer type="module" src="./js/mob-menu.js"></script>
 </body>
 </html>

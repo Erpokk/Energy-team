@@ -47,7 +47,7 @@ export function createExerciseCards(cards) {
           <use href="${icons}#runn-man"></use>
         </svg>
         </p>
-        <p class="workout-details-disc">${name}</p>
+        <p class="workout-details-disc">${capitalizeFirstLetter(name)}</p>
       </div>
        <div class="workout-stats">
         <p class="workout-stats-cal"><span class="workout-stats-title">Burned calories: </span>${burnedCalories + ' / ' + time}</p>
