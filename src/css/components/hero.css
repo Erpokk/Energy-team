@@ -61,6 +61,11 @@
     }
 }
 
+.hero-tags-image, 
+.hero-tags-desktop {
+    display: none;
+}
+
 .hero-tag {
     padding: 4px 12px;
     border: 1px solid #242424;
@@ -132,6 +137,7 @@
 
     .hero-tags-image {
         border-radius: 20px;
+        display: block;
     }
 
     .hero-tags-desktop {
