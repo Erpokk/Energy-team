@@ -13,13 +13,13 @@ function capitalizeFirstLetter(string) {
 // Функция для отрисовки карточек из localStorage
 export function createExerciseCardsFromLocalStorage() {
   const cards = JSON.parse(localStorage.getItem('favorites_exercises_ls_key')) || [];
-  if(cards.length === 0) {
-    const wrapperSecnd = document.getElementById('wrapper-secnd'); 
+  if (cards.length === 0) {
+    const wrapperSecnd = document.getElementById('wrapper-secnd');
     wrapperSecnd.innerHTML = `<li class="text-exer"><p>It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future.</p></li>`;
     return;
   }
   // Проверка, сколько карточек получено из localStorage
- 
+
 
   const cardsHtml = cards
     .map(
@@ -32,13 +32,13 @@ export function createExerciseCardsFromLocalStorage() {
                   <use href="${icons}#icon-trash"></use>
               </svg>
             </div>
-            <div class="workout-title-right">
-              <button class="workout-start" data-modal-open="${_id}">Start
-                <svg class="workout-arw" width="16" height="16">
-                  <use href="${icons}#arw-top"></use>
-                </svg>
-              </button>
-            </div>
+         <div class="workout-title-right">
+          <button class="workout-start" data-modal-open="${_id}">Start
+          <svg class="workout-arw" width="16" height="16">
+            <use href="${icons}#arw-top"></use>
+          </svg>
+          </button>
+        </div>
           </div>
           <div class="workout-details">
             <p class="workout-run-man-wrapper">
@@ -61,7 +61,7 @@ export function createExerciseCardsFromLocalStorage() {
   const wrapperSecnd = document.getElementById('wrapper-secnd');
   if (wrapperSecnd) {
     wrapperSecnd.innerHTML = cardsHtml;
-  } 
+  }
 }
 
 // Функция для удаления упражнения из localStorage и перерендеринга списка

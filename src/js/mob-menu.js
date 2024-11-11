@@ -13,12 +13,12 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-window.addEventListener('keydown', e => {
-  if (e.key === 'Escape') {
-    headerEl.classList.remove('open');
-    document.documentElement.style.overflow = 'auto';
-  }
-});
+// window.addEventListener('keydown', e => {
+//   if (e.key === 'Escape') {
+//     headerEl.classList.remove('open');
+//     document.documentElement.style.overflow = 'auto';
+//   }
+// });
 
 burgerEl.addEventListener('click', event => {
   event._isClickWithInMenu = true;
