@@ -15,6 +15,11 @@ const exerciseModalContentRef = exerciseModalBackdropRef.querySelector(
 const exerciseModalCloseBtnRef = exerciseModalBackdropRef.querySelector(
   '.exercise-modal__close-btn'
 );
+window.addEventListener('popstate', updateExercisesListRef);
+
+function updateExercisesListRef() {
+    exercisesListRef = document.querySelector('.exr-list');
+}
 const exercisesListRef = document.querySelector('.exr-list');
 
 const EXERCISE_MODAL_BACKDROP_HIDDEN_CLASS =
