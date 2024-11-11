@@ -98,6 +98,7 @@
 
 .exr-category {
     display: flex;
+    white-space: nowrap;
     gap: 20px;
     align-items: center;
     width: 100%;
@@ -148,4 +149,16 @@
 
 .hidden {
     display: none;
+}
+
+.selected-category {
+    font-size: 24px;
+    line-height: 1.33;
+    letter-spacing: -0.02em;
+    color: rgba(36, 36, 36, 0.5);
+
+    @media (max-width: 768px) {
+        font-size: 20px;
+        line-height: 1;
+    }
 }

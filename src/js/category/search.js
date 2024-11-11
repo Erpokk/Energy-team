@@ -18,7 +18,8 @@ function getFilterParams() {
   };
 }
 
-async function searchExercises() {   
+async function searchExercises() {
+  paginationContainer.innerHTML = '';
   const filter = { ...filterStore.filter };
   filter.keyword = searchInput.value.trim();
 
