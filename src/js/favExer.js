@@ -83,6 +83,17 @@ function removeFavoriteExercise(exerciseId, element) {
 // Обработчик для всех кнопок удаления
 document.addEventListener('DOMContentLoaded', () => {
   const wrapperSecnd = document.getElementById('wrapper-secnd');
+  
+  const quoteElement = document.querySelector('.quote');
+  const authorElement = document.querySelector('.quote-author');
+
+  const storedQuote = localStorage.getItem('dailyQuote');
+  if (storedQuote) {
+      const parsedQuote = JSON.parse(storedQuote);
+      quoteElement.textContent = parsedQuote.quote;
+      authorElement.textContent = parsedQuote.author;
+  }
+
 
   if (wrapperSecnd) {
     wrapperSecnd.addEventListener('click', (event) => {
@@ -98,3 +109,5 @@ document.addEventListener('DOMContentLoaded', () => {
     createExerciseCardsFromLocalStorage();
   }
 });
+
+
