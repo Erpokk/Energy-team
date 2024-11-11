@@ -2,7 +2,13 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin-bottom: 80px;
+    margin-bottom: 80px; 
+
+    @media screen and (min-width:768px) {
+        flex-direction: row;
+    }
+
+    
 }
 
 .quote-card {
@@ -136,21 +142,51 @@
 @media only screen and (min-width: 768px) {
     .exrcs-motivation-container {
         flex-direction: row;
-        flex-wrap: wrap;
+        flex-wrap: wrap;    
         gap: 32px;
         max-width: 800px;
         margin: 0 auto;
         justify-content: center;
     }
 
-    .quote-card,
+    .quote-card {
+        width: 53%;
+        /* height: 249px; */
+    }
     .image-wrapper {
-        width: calc((100% - 16px) * 2);   
-        /* padding: 32px 16px; */
+        margin: 0;
+        width: 42%;
     }
 
     .exercise-goal-card {
-        width: calc(100% - 16px);        
+        width: 53%;
+        margin: 0;
+        margin-right: auto;  
     }
 }
 
+@media screen and (min-width:1440px) {
+    .exrcs-motivation-container {
+        flex-direction: column;
+        flex-wrap: nowrap;    
+        gap: 32px;
+        max-width: none;
+        margin: 0;
+        justify-content: flex-start;
+    }
+
+    .quote-card {
+        width: 100%;
+    }
+
+    .image-wrapper {
+        margin: 0;
+        width: 100%;
+    }
+
+    .exercise-goal-card {
+        width: 100%;
+        margin: 0;
+        margin-right: auto;  
+    }
+}
