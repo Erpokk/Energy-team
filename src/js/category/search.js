@@ -41,18 +41,20 @@ async function searchExercises() {
 function renderPagination(totalPages) {
   paginationContainer.innerHTML = '';
   for (let i = 1; i <= totalPages; i++) {
-    const pageButton = document.createElement('button');
+    const pageButton = document.createElement('li');
     pageButton.textContent = i;
-    pageButton.classList.add('pagination-btn');
+    pageButton.classList.add('page-button');
     if (i === currentPage) pageButton.classList.add('active');
     
     pageButton.addEventListener('click', () => {
+      document.querySelectorAll('.page-button').forEach(button => button.classList.remove('active'));
+      pageButton.classList.add('active');
       currentPage = i;     
       searchExercises();
     });
 
     paginationContainer.appendChild(pageButton);
-  }
+  }  
 }
 
 searchButton.addEventListener('click', (event) => {
