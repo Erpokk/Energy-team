@@ -270,6 +270,7 @@ function unmountActionBar() {
 function renderActionButton({ type = '', className = '', children = '' }) {
   return `
         <button
+            aria-label="start-trainig"
             class="exercise-modal__btn exercise-modal__btn--${type} ${className}"
             type="button"
           >

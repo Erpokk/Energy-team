@@ -3,6 +3,7 @@ import { createCategoryCards, createExerciseCards } from './createCards.js';
 import { exrListEl, quoteText, quoteAuthor } from './constants.js';
 import fetchExercises from '../utils/fetchExercises.js';
 import fetchQuote from '../utils/fetchQuote.js';
+import { quoteStorage } from './strore-quote.js'
 
 export async function processFetchCategory(filter) {
   const data = await fetchFilters(filter);
@@ -30,8 +31,15 @@ export async function processFetchExercises(filter) {
   return data;
 }
 
-export async function processFetchQuote() {
-  const data = await fetchQuote();
+export async function processFetchQuote() {  
+  let data = quoteStorage.getQuoteIfToday();
+
+  if (!data) {   
+    data = await fetchQuote();
+    if (data) {
+      quoteStorage.saveQuote(data);
+    }
+  }
   
   quoteText.textContent = data?.quote ?? 'No quote available';
   quoteAuthor.textContent = data?.author ?? 'Unknown';
