@@ -134,6 +134,10 @@
         text-align: right; 
         width: 197px; 
     }
+    
+    .hero-tags {
+        display: none;
+    }
 
     .hero-tags-image {
         border-radius: 20px;
