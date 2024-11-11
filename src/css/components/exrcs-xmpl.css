@@ -14,9 +14,9 @@
 .exr-category-card {
     cursor: pointer;
     position: relative;
-    flex: 0 0 calc(33.33% - 15px);
+    /* flex: 0 0 calc(33.33% - 15px); */
+    flex-basis: calc((100% - 32px) / 3);
     box-sizing: border-box;
-    margin-bottom: 17px;
     border-radius: 12px;
     overflow: hidden;
 
@@ -249,7 +249,6 @@
     }
 }
 .exr-block {
-    margin-bottom: 80px;
     @media screen  and (min-width:1440px){
        width: 85%;
     }

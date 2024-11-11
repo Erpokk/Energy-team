@@ -26,7 +26,7 @@
             </div>
         </div>
         <!-- Content images with Retina display support -->
-        <img 
+        <!-- <img 
             src="./images/hero/girls-outdoors-working-out-mob@1x.jpg" 
             srcset="./images/hero/girls-outdoors-working-out-mob@2x.jpg 2x" 
             width="335" height="460" 
@@ -46,7 +46,32 @@
             width="1376" height="350" 
             alt="Two girls exercising outdoors near a lake, facing each other in a plank position, and giving a high-five with smiles on their faces" 
             class="hero-image-desktop">   
-        
+         -->
+         <picture>
+            <source 
+                srcset="./images/hero/girls-outdoors-working-out-desk@1x.jpg, 
+                        ./images/hero/girls-outdoors-working-out-desk@2x.jpg 2x" 
+                media="(min-width: 1024px)" 
+                width="1376" 
+                height="350">
+            <source 
+                srcset="./images/hero/girls-outdoors-working-out-tablet@1x.jpg, 
+                        ./images/hero/girls-outdoors-working-out-tablet@2x.jpg 2x" 
+                media="(min-width: 768px)" 
+                width="704" 
+                height="550">
+            <source 
+                srcset="./images/hero/girls-outdoors-working-out-mob@1x.jpg, 
+                        ./images/hero/girls-outdoors-working-out-mob@2x.jpg 2x" 
+                media="(max-width: 767px)" 
+                width="335" 
+                height="460">
+            <img 
+                src="./images/hero/girls-outdoors-working-out-mob@1x.jpg" 
+                srcset="./images/hero/girls-outdoors-working-out-mob@2x.jpg 2x" 
+                alt="Two girls exercising outdoors near a lake, facing each other in a plank position, and giving a high-five with smiles on their faces" 
+                class="hero-image">
+        </picture>
         <ul class="hero-tags">
             <li class="hero-tag">#Sport</li>
             <li class="hero-tag">#Healthy</li>

@@ -114,7 +114,7 @@
     @media screen and (min-width:1440px) {
         flex-direction: row;
         flex-wrap: wrap;
-        height: 487px; 
+        height: 472px; 
         overflow-y: auto; 
         overflow-x: hidden; 
         padding-right: 10px; 
