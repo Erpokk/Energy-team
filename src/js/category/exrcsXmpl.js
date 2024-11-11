@@ -1,3 +1,5 @@
+import { searchForm } from './constants.js';
+import { filterStore } from './store-filter.js';
 import { pagination } from './pagination.js';
 import { getLimitCategoryByPage, getLimitExerciseByPage } from './limitPerPage.js';
 import {
@@ -27,18 +29,20 @@ window.addEventListener('DOMContentLoaded', () => {
 
 async function handleFilter(event) {
   if (event.target.classList.contains('exr-category-item')) {
-
     selectedCategory.textContent = '';
-    selectedCategorySlash.classList.add('hidden');
-
+    selectedCategorySlash.classList.remove('hidden');
+    searchForm.classList.add('visually-hidden');
     document.querySelectorAll('.exr-category-item').forEach(category => category.classList.remove('active'));
     event.target.classList.add('active');
+
     const value = event.target.textContent;
     const filter = {
       filter: value,
       page: 1,
       limit: getLimitCategoryByPage(),
     };
+
+    filterStore.updateFilter(filter);
     const data = await processFetchCategory(filter);
     if (data) {
       pagination(data.totalPages, filter, processFetchCategory);
@@ -60,12 +64,14 @@ async function handleCategoryElement(event) {
         page: 1,
         limit: getLimitExerciseByPage(),
       };
-
+    
     const data = await processFetchExercises(filter);
     if (data) {
       selectedCategorySlash.classList.remove('hidden');
       selectedCategory.textContent = capitalizeFirstLetter(categoryName);
       pagination(data.totalPages, filter, processFetchExercises);
+      searchForm.classList.remove('visually-hidden');
+      filterStore.updateFilter(filter);
     }
   }
 }
