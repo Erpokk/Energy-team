@@ -10,6 +10,8 @@ export function createCategoryCards(cards) {
           class="exr-category-card-img"
           src="${imgURL}"
           alt="${name}"
+          width="265"
+          height="255"
         />
        <div class="exr-category-card-text">
            <div class="exr-category-card-title">${capitalizeFirstLetter(name)}</div>
