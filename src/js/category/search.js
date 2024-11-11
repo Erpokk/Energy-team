@@ -18,10 +18,11 @@ function getFilterParams() {
   };
 }
 
-async function searchExercises() {
+async function searchExercises(currentPage) {
   paginationContainer.innerHTML = '';
   const filter = { ...filterStore.filter };
   filter.keyword = searchInput.value.trim();
+  filter.page = currentPage
 
   delete filter.bodypart;
   delete filter.equipment;
@@ -46,28 +47,28 @@ function renderPagination(totalPages) {
     pageButton.textContent = i;
     pageButton.classList.add('page-button');
     if (i === currentPage) pageButton.classList.add('active');
-    
-    pageButton.addEventListener('click', () => {
+
+    pageButton.addEventListener('click', async () => {
       document.querySelectorAll('.page-button').forEach(button => button.classList.remove('active'));
       pageButton.classList.add('active');
-      currentPage = i;     
-      searchExercises();
+      currentPage = i;
+      await searchExercises(currentPage);
     });
 
     paginationContainer.appendChild(pageButton);
-  }  
+  }
 }
 
-searchButton.addEventListener('click', (event) => {
+searchButton.addEventListener('click', async (event) => {
   event.preventDefault();
-  currentPage = 1;  
-  searchExercises();
+  currentPage = 1;
+  await searchExercises(currentPage);
 });
 
-searchInput.addEventListener('keypress', (event) => {
+searchInput.addEventListener('keypress', async (event) => {
   if (event.key === 'Enter') {
     event.preventDefault();
-    currentPage = 1;    
-    searchExercises();
+    currentPage = 1;
+    await searchExercises(currentPage);
   }
 });
