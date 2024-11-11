@@ -1,4 +1,4 @@
-import { searchForm } from './constants.js';
+import { searchForm, searchInput } from './constants.js';
 import { filterStore } from './store-filter.js';
 import { pagination } from './pagination.js';
 import { getLimitCategoryByPage, getLimitExerciseByPage } from './limitPerPage.js';
@@ -29,6 +29,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 async function handleFilter(event) {
   if (event.target.classList.contains('exr-category-item')) {
+    searchInput.value = '';
     selectedCategory.textContent = '';
     selectedCategorySlash.classList.add('hidden');
     searchForm.classList.add('visually-hidden');
@@ -51,6 +52,7 @@ async function handleFilter(event) {
 }
 
 async function handleCategoryElement(event) {
+  searchInput.value = '';
   paginationContainer.innerHTML = '';
   const clickedLi = event.target.closest('.exr-category-card');
 
