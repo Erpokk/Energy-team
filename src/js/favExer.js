@@ -33,7 +33,7 @@ export function createExerciseCardsFromLocalStorage() {
               </svg>
             </div>
          <div class="workout-title-right">
-          <button class="workout-start" data-modal-open="${_id}">Start
+          <button aria-label="start-trainig" class="workout-start" data-modal-open="${_id}">Start
           <svg class="workout-arw" width="16" height="16">
             <use href="${icons}#arw-top"></use>
           </svg>
