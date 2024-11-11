@@ -2,20 +2,17 @@
 .exercises {
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
-    margin-bottom: 20px;
+    row-gap: 32px;
+    margin-bottom: 32px;
 
     @media only screen and (min-width: 768px) {    
-        row-gap: 32px;
-        margin-bottom: 32px;
+        /* row-gap: 32px;
+        margin-bottom: 32px; */
     }
-    @media only screen and (max-width: 768px) {
+    @media only screen and (min-width: 1440px) {
         flex-direction: row;
         row-gap: 0;
-        justify-content: space-between;
-        /* flex-direction: column;
-        align-items: flex-start;
-        padding: 20px 0; */
+        justify-content: space-between;        
     }
 }
 
@@ -36,22 +33,22 @@
 .exercises-controls {
     display: flex;
     align-items: center;
+    flex-direction: column;
     gap: 20px;
     max-width: 704px;
     justify-content: space-between;
     row-gap: 20px;
 
     @media only screen and (min-width: 768px) {        
-        flex-direction: column;
-        align-items: flex-start;        
+        flex-direction: row;
+        align-items: flex-start;   
+        max-width: 800px;
     }
 
     @media only screen and (min-width: 1440px) {        
-        /* flex-direction: column;
-        align-items: flex-start;
-        width: 100%; */
-        max-width: 900px;
-        margin-left: auto;
+        flex-direction: row;
+        row-gap: 30px;
+        max-width: 900px;        
     }
 }
 
@@ -107,13 +104,12 @@
     justify-content: flex-start;
     gap: 10px;
 
-    @media (min-width: 768px) {
-        gap: 15px;
-        justify-content: flex-start;
+    @media (min-width: 768px) {       
+        justify-content: flex-end;
     }
 
-    @media only screen and (max-width: 768px) {
-        
+    @media only screen and (min-width: 1440px) {
+        gap: 10px;        
     }
 }
 
@@ -122,11 +118,7 @@
     position: relative;
     font-size: 16px;
     line-height: 1.5;
-    color: rgba(36, 36, 36, 0.6);
-
-    @media only screen and (max-width: 768px) {
-        font-size: 14px;
-    }
+    color: rgba(36, 36, 36, 0.6);    
 }
 
 .exr-category-item::after {
