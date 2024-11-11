@@ -42,10 +42,19 @@
 
 .hero-image {
     border-radius: 30px; 
+    width:335px;
+    height:460px;
 
     @media screen and (min-width:768px) {
         display: block;
         border-radius: 60px;
+        width:705px;
+        height:550px;
+    }
+
+    @media screen and (min-width:1440px) {
+        width:1376px;
+        height:350px;
     }
 }
 
