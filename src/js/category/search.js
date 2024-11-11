@@ -22,6 +22,7 @@ async function searchExercises() {
   paginationContainer.innerHTML = '';
   const filter = { ...filterStore.filter };
   filter.keyword = searchInput.value.trim();
+  filter.page = currentPage;  
 
   delete filter.bodypart;
   delete filter.equipment;
