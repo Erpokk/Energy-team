@@ -18,7 +18,8 @@ function getFilterParams() {
   };
 }
 
-async function searchExercises() {   
+async function searchExercises() {
+  paginationContainer.innerHTML = '';
   const filter = { ...filterStore.filter };
   filter.keyword = searchInput.value.trim();
 
@@ -41,9 +42,9 @@ async function searchExercises() {
 function renderPagination(totalPages) {
   paginationContainer.innerHTML = '';
   for (let i = 1; i <= totalPages; i++) {
-    const pageButton = document.createElement('button');
+    const pageButton = document.createElement('li');
     pageButton.textContent = i;
-    pageButton.classList.add('pagination-btn');
+    pageButton.classList.add('page-button');
     if (i === currentPage) pageButton.classList.add('active');
     
     pageButton.addEventListener('click', () => {
